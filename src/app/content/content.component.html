@@ -1,0 +1,41 @@
+<main class="app-content">
+  <h3 class="app-title">Tasks and adding</h3>
+
+  <div class="app-addtodo">
+    <div class="app-input">
+      <input [(ngModel)]="txt" [value]="txt" type="text" placeholder="Type new task here" />
+    </div>
+    <div class="icon--square">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"
+        />
+      </svg>
+    </div>
+    <div class="icon--square">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <button class="app-add-btn" (click)="addTodo()">Add new task</button>
+
+  <ul class="app-todos" *ngIf="todos.length > 0">
+    <li class="app-todo" [ngClass]="{'app-todo--done': todo.done }" *ngFor="let todo of todos">
+      <div class="app-todo__left">
+        <button class="app-todo-done" (click)="toggleDone(todo.id)"></button>
+        <span>{{ todo.txt }}</span>
+      </div>
+
+      <div class="app-todo__right">
+        <time class="app-todo__time">{{ todo.time | date:'EEEEEE. h.mm aa' }}</time>
+        <button (click)="removeTodo(todo.id)" class="app-todo-remove">
+          <svg class="icon icon--dark" viewBox="0 0 24 24">
+            <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</main>

@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before
+  box-sizing border-box
+
+body
+  margin 0
+  font-family Arial
+  background-color #eee
+
+button
+  background-color transparent
+  border-width 0
+
+  &:focus
+    outline-width 0
+
+input
+  &:focus
+    outline-width 0
+
+.app-layout
+  display grid
+  grid-template-rows 60px calc(100vh - 60px)
+  grid-template-columns 60px auto
+
+  height 100vh
+
+.icon
+  height 30px
+  width 30px
+  fill white
+  display block
+  cursor pointer
+
+  &--dark
+    fill #7158e2 
+
+  &--square
+    height 40px
+    width 40px
+    display flex
+    align-items center
+    justify-content center
+    background-color #7158e2 
+
+    @media (max-width: 520px)
+      display none

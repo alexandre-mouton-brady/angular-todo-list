@@ -1,0 +1,98 @@
+.app-content
+  flex 1
+  display flex
+  flex-flow column nowrap
+  padding 20px
+  background-color #fff
+  color #333
+
+.app-title
+  margin 0 0 40px
+  font-weight 100
+  letter-spacing 0.9px
+
+.app-addtodo
+  display flex
+  align-items center
+
+  & .icon--square
+    margin-left 20px
+
+.app-input
+  flex 1
+  padding 10px 0
+  border-top solid 2px #7158e2
+  border-bottom solid 2px #7158e2
+  
+  & input
+    display block
+    width 100%
+    border-width 0
+    background-color transparent
+    font-size 1rem
+    color #7158e2
+
+    &::placeholder
+      color #7158e2
+
+.app-add-btn
+  background-color #ff9f1a
+  color #fff
+  padding 10px 20px
+  border-radius 2px
+  border-width 0
+  margin 20px 0
+  align-self flex-end
+
+.app-todos
+  padding 0
+  overflow auto
+  list-style-type none
+
+.app-todo
+  border solid 2px #7158e2
+  display flex
+  justify-content space-between
+  flex-flow row wrap
+  padding 10px 20px
+  margin-bottom 20px
+  position relative
+
+  &__left,
+  &__right
+    display flex
+    align-items center
+
+  &__time
+    @media (max-width: 520px)
+      display none
+
+  &--done
+
+    & .app-todo-done
+      border-color #17c0eb
+      background-color #17c0eb
+
+    &::after
+      content ''
+      position absolute
+      height 2px
+      right 20px
+      left 20px
+      top 50%
+      transform translateY(-50%);
+      background-color #17c0eb
+
+
+.app-todo-done
+  display block
+  height 20px
+  width 20px
+  border solid 2px #ff9f1a
+  border-radius 50%
+  margin-right 20px
+  cursor pointer
+  background-color transparent
+
+.app-todo-remove
+  margin-left 20px

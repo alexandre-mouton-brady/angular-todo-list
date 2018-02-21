@@ -1,0 +1,78 @@
+.app-logo,
+.app-cart
+  background-color #7158e2
+  display inline-flex
+  justify-content center
+  align-items center
+  font-size 3rem
+  width 60px
+
+.app-dashboard
+  flex 1
+  display flex
+  justify-content space-between
+
+  &__right
+    display flex
+
+.app-title
+  display flex
+  flex-flow column nowrap
+  justify-content center
+  padding 0 20px
+
+  & > h1
+    font-size 1.1rem
+    font-weight 100
+    margin 0
+    
+  & > h2
+    font-size 0.95rem
+    font-weight 100
+    margin 0
+
+.app-search
+  flex 1
+  display flex
+  margin 10px
+  background-color #7158e2
+
+  & > input
+    border-width 0
+    display block
+    font-size 1.2rem
+    background-color transparent
+    color white
+    flex 1
+
+  & > svg
+    margin 0 10px
+    align-self center
+
+.app-time
+  display flex
+  flex-flow column nowrap
+  justify-content center
+  align-items center
+  margin 0 40px
+
+  &__time
+    font-weight bold
+    font-size 1.6rem
+
+  &__date
+    font-size 0.85rem
+
+.app-nav
+  display flex
+  align-items center
+  
+  & svg   
+    margin-right 30px
+
+@media (max-width: 860px)
+  .app-time,
+  .app-nav,
+  .app-cart,
+  .app-title
+    display none
